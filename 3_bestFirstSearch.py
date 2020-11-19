@@ -71,30 +71,28 @@ def add_to_open(open, neighbor):
     return True
 def main():
     graph = Graph()
-    graph.connect('Frankfurt', 'Wurzburg', 111);graph.connect('Frankfurt', 'Mannheim', 85)
-    graph.connect('Wurzburg', 'Nurnberg', 104);graph.connect('Wurzburg', 'Stuttgart', 140)
-    graph.connect('Wurzburg', 'Ulm', 183);graph.connect('Mannheim', 'Nurnberg', 230)
-    graph.connect('Mannheim', 'Karlsruhe', 67);graph.connect('Karlsruhe', 'Basel', 191)
-    graph.connect('Karlsruhe', 'Stuttgart', 64);graph.connect('Nurnberg', 'Ulm', 171)
-    graph.connect('Nurnberg', 'Munchen', 170);graph.connect('Nurnberg', 'Passau', 220)
-    graph.connect('Stuttgart', 'Ulm', 107);graph.connect('Basel', 'Bern', 91)
-    graph.connect('Basel', 'Zurich', 85);graph.connect('Bern', 'Zurich', 120)
-    graph.connect('Zurich', 'Memmingen', 184);graph.connect('Memmingen', 'Ulm', 55)
-    graph.connect('Memmingen', 'Munchen', 115);graph.connect('Munchen', 'Ulm', 123)
-    graph.connect('Munchen', 'Passau', 189);graph.connect('Munchen', 'Rosenheim', 59)
-    graph.connect('Rosenheim', 'Salzburg', 81);graph.connect('Passau', 'Linz', 102)
-    graph.connect('Salzburg', 'Linz', 126)
+    graph.connect("A","B");
+    graph.connect("A","C");
+    graph.connect("A","D");
+    graph.connect("B","E");
+    graph.connect("B","F");
+    graph.connect("C","G");
+    graph.connect("C","H");
+    graph.connect("D","I");
+    graph.connect("D","J");
     graph.make_undirected()
     heuristics = {}
-    heuristics['Basel'] = 204;heuristics['Bern'] = 247
-    heuristics['Frankfurt'] = 215;heuristics['Karlsruhe'] = 137
-    heuristics['Linz'] = 318;heuristics['Mannheim'] = 164
-    heuristics['Munchen'] = 120;heuristics['Memmingen'] = 47
-    heuristics['Nurnberg'] = 132;heuristics['Passau'] = 257
-    heuristics['Rosenheim'] = 168;heuristics['Stuttgart'] = 75
-    heuristics['Salzburg'] = 236;heuristics['Wurzburg'] = 153
-    heuristics['Zurich'] = 157;heuristics['Ulm'] = 0
-    path = best_first_search(graph, heuristics, 'Frankfurt', 'Ulm')
+    heuristics["A"]=6
+    heuristics["B"]=8
+    heuristics["C"]=7
+    heuristics["D"]=9
+    heuristics["E"]=9
+    heuristics["F"]=10
+    heuristics["G"]=8
+    heuristics["H"]=9
+    heuristics["I"]=5
+    heuristics["J"]=6
+    path = best_first_search(graph, heuristics, 'A', 'F')
     print("\npath traced by best first search algorithm is:\n\n",path)
     print()
 if __name__ == "__main__":
